@@ -1,4 +1,4 @@
-# boris-bikes
+# Boris Bikes
 
 Challenges to practice testing and object oriented programming concepts
 
