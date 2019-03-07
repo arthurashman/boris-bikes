@@ -15,7 +15,7 @@ describe DockingStation do
 end
 
 describe DockingStation do
-  it { is_expected.to respond_to(:bike) }
+  it { is_expected.to respond_to(:bikes) }
 end
 
 describe DockingStation do
@@ -33,7 +33,7 @@ describe DockingStation do
     docking_station = DockingStation.new
     bike = Bike.new
     docking_station.dock(bike)
-    expect(docking_station.bike).to eq bike
+    expect(docking_station.bikes).to eq bike
   end
 end
 
