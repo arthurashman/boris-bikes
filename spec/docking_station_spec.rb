@@ -21,6 +21,8 @@ end
 describe DockingStation do
   it 'gets a working bike' do
     docking_station = DockingStation.new
+    bike = Bike.new
+    docking_station.dock(bike)
     bike = docking_station.release_bike
     expect(bike.working?).to eq true
   end
@@ -33,4 +35,12 @@ describe DockingStation do
     docking_station.dock(bike)
     expect(docking_station.bike).to eq bike
   end
+end
+
+describe DockingStation do
+  it 'gives error if docking station is empty' do
+    docking_station = DockingStation.new
+    expect { docking_station.release_bike }.to raise_error "No bikes available"
+      # expect (raise "Docking station).to raise_error is empty" expect docking_staion. not release a bike if docking_station.empty?
+end
 end
