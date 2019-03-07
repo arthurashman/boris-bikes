@@ -41,6 +41,14 @@ describe DockingStation do
   it 'gives error if docking station is empty' do
     docking_station = DockingStation.new
     expect { docking_station.release_bike }.to raise_error "No bikes available"
-      # expect (raise "Docking station).to raise_error is empty" expect docking_staion. not release a bike if docking_station.empty?
+end
+end
+
+describe DockingStation do
+  it 'gives error if docking station is full' do
+    docking_station = DockingStation.new
+    bike = Bike.new
+    docking_station.dock(bike)
+    expect { docking_station.dock(bike) }.to raise_error "No space available"
 end
 end
