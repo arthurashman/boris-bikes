@@ -2,7 +2,7 @@ require 'docking_station'
 
 describe DockingStation do
   it 'creates new docking station' do
-    expect(DockingStation.new.is_a? DockingStation).to eq true
+    expect(subject.is_a? DockingStation).to eq true
   end
 end
 
@@ -41,5 +41,15 @@ end
       bike = Bike.new
       DockingStation::DEFAULT_CAPACITY.times { docking_station.dock(Bike.new) }
       expect { docking_station.dock(bike) }.to raise_error "No space available"
+    end
+  end
+
+  describe DockingStation do
+    it "expected to have the default capacity of 20" do
+      expect(subject).to have_attributes(:capacity => 20)
+    end
+
+    it "change the capacity to the passed argument" do
+      expect(DockingStation.new(25)).to have_attributes(:capacity => 25)
     end
   end
