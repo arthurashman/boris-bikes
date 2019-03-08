@@ -39,7 +39,7 @@ end
     it 'gives error if docking station is full' do
       docking_station = DockingStation.new
       bike = Bike.new
-      20.times { docking_station.dock(Bike.new) }
+      DockingStation::DEFAULT_CAPACITY.times { docking_station.dock(Bike.new) }
       expect { docking_station.dock(bike) }.to raise_error "No space available"
     end
   end
